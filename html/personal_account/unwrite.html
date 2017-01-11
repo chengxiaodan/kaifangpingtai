@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="middle-box center">
+			<div class="repw-img c3"></div>
+			<p class="lose-p font">尚未完成开发者登记</p>
+			<a id="unregister" class="bbtn btn-sign">现在登记</a>
+		</div>
+	</body>
+	<script>
+		$(function(){
+			$('#unregister').click(function(){
+				if(PT_utils.getUrlParameter('userType') == "business"){
+					$('#unregister').attr('href',"../../../ptdev_platform/html/developer/business_register.html");
+				}else{
+					$('#unregister').attr('href',"../../../ptdev_platform/html/developer/owner_register.html");
+				}
+			});
+		});
+	</script>
+</html>

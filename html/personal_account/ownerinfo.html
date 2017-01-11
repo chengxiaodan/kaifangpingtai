@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#render>ul {
+				margin-top: 40px;
+			}
+			#render>ul>li:first-child {
+				margin-top: 40px;
+			}
+			.dev-container .dev-wrapper .dev-h2 {
+				margin-top: 0px;
+			}
+			
+			#render>ul>li {
+				margin-top: 0px;
+				font-size: 14px;
+				color: #424242;
+			}
+			
+			.dev-container .dev-wrapper .photomain {
+				margin-left: 12px;
+			}
+			
+			.dev-container .dev-wrapper .textareali textarea {
+				border: 0px;
+				overflow-y: hidden;
+				resize: none;
+			}
+			
+			.dev-container .dev-wrapper ul li .inputname {
+				width: auto;
+			}
+			
+			.dev-container .dev-wrapper .photo {
+				border: 0px;
+			}
+			
+			.dev-container .dev-wrapper .photomain img {
+				width: auto;
+				height: auto;
+				border: 0px;
+				margin: 10px 0px 40px 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="dev-title dev-h2">个人开发者认证</div>
+		<ul>
+			<li>
+				<label>开发者ID</label>
+				<span class="inputname" name="usercode" id="usercode"></span>
+			</li>
+			<li>
+				<label>真实姓名</label>
+				<span class="inputname" name="username" id="username"></span>
+			</li>
+			<li class="selectli">
+				<label for="credentials">证件号</label>
+				<span class="inputname" name="credentials" id="credentials"></span>
+			</li>
+			<li class="photoli8">
+				<label class="phototitle">手持身份证照片</label>
+				<div class="photomain">
+					<img id="cardPhoto" src="../../img/developer/deletephoto.png">
+				</div>
+			</li>
+			<li class="photoli8">
+				<label class="phototitle">身份证信息</label>
+				<div class="photomain">
+					<img id="frontback" src="../../img/developer/deletephoto2.png">
+				</div>
+			</li>
+		</ul>
+		<div class="dev-title dev-h3">品牌信息&nbsp;&nbsp;<span>(品牌信息将展示在应用商店分类上，填写品牌信息能够增加应用曝光。)</span></div>
+		<ul>
+			<li>
+				<label>品牌名称<span>(选填)</span></label>
+				<span class="inputname" name="brandname" id="brandname">CCCLUB</span>
+			</li>
+			<li class="photoli3">
+				<label>品牌logo<span>(选填)</span></label>
+				<div class="photomain">
+					<img id="brandlogo" src="../../img/developer/deletephoto.png">
+				</div>
+			</li>
+			<li class="textareali">
+				<label class="phototitle">品牌简介<span>(选填)</span></label>
+				<div id="brandintro" class="introduction">
+				</div>
+			</li>
+		</ul>
+		<div class="dev-title dev-h3">联系方式</div>
+		<ul>
+			<li>
+				<label>手机号码</label>
+				<span class="inputname" name="tel" id="tel"></span>
+			</li>
+			<li>
+				<label>座机号码<span>(选填)</span></label>
+				<span id="fixedtel" class="inputname"></span>
+			</li>
+			<li>
+				<label>邮箱地址</label>
+				<span class="inputname" name="emailaddress" id="emailaddress"></span>
+			</li>
+			<li>
+				<label>联系地址</label>
+				<span class="inputname" name="address" id="address"></span>
+			</li>
+		</ul>
+		<div class="dev-center">
+			<a name="owner_update" class="bbtn btn-sign">修改信息</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$('a[name=owner_update]').click(function() {
+				$.get("../../../ptdev_platform/html/personal_account/ownerUpdate.html", function(data) {
+					$('#render').html(data);
+				});
+			});
+			getOwnerInfo();
+			//获取个人开发者信息
+			function getOwnerInfo() {
+				//ajax 获取数据
+				//todo
+				var data = {
+					usercode: 'chengxiaodan@putao.com', //开发者账号
+					username: 'chengxiaodan', //真实姓名
+					credentials: '452131199003254567', //证件号
+					handPhoto: '../../img/developer/deletephoto.png', //手持身份证照片
+					frontback: '../../img/developer/deletephoto2.png', //身份证正反照
+					brandname: 'CCCLUB',
+					brandlogo: '../../img/developer/deletephoto.png',
+					brandintro: '致力于开发儿童数字游戏和互动应用，让孩子们通过动态的交互方式来了解世界，' +
+						'每一款应用都可以激发孩子们的想象力，让孩子不再仅限于从书本上获取知识。',
+					tel: '180174881771',
+					areacode: '0773',
+					fixedtel: '3555851',
+					emailaddress: 'chengxiaodan@putao.com',
+					address: '上海市闵行区虹桥镇田林路1016号绿洲科技三期2号楼葡萄科技'
+				};
+				$('#usercode').text(data.usercode); //开发者账号
+				$('#username').text(data.username); //真实姓名
+				$('#credentials').text(data.credentials); //证件号
+				$('#cardPhoto').attr('href', data.handPhoto); //身份证手持照片
+				$('#frontback').attr('href', data.frontback); //身份证正反面照片
+				$('#brandname').text(data.brandname); //品牌名称 选填
+				$('#brandlogo').attr('href', data.brandlogo); //品牌log 选填
+				$('#brandintro').text(data.brandintro); //品牌简介 选填
+				$('#tel').text(data.tel); //联系人电话 
+				$('#fixedtel').text(data.areacode + "-" + data.fixedtel); //联系人座机电话 选填
+				$('#emailaddress').text(data.emailaddress); //邮箱地址
+				$('#address').text(data.address); //居住地址
+			}
+		});
+	</script>
+
+</html>

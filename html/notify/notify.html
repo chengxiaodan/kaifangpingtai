@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/notify/notify.css" />
+		<link rel="stylesheet" href="../../css/perfectPager.css" />
+		<title>通知中心</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="notify">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>通知中心</li>
+					</ul>
+				</div>
+				<div class="dev-wrapper">
+					<div class="wrapper-nav">
+						<input type="radio" id="all-notify" value="1" name="tractor" checked='checked' hidden="hidden" />
+						<input type="radio" id="noread" value="2" name="tractor" hidden="hidden" />
+						<nav class="nav">
+							<label for="all-notify">全部通知</label>
+							<label for="noread">未读信息</label>
+						</nav>
+						<div class="all-notify itemtable">
+							<ul id="notifylist">
+							</ul>
+							<div id="read-page" class="dev-page pb-center">
+							</div>
+						</div>
+						<div class="noread itemtable">
+							<ul id="noreadlist">
+							</ul>
+							<div id="noread-page" class="dev-page pb-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/plugin/page/jquery.perfectPager.js"></script>
+	<script type="text/javascript" src="../../js/notify/notify.js" ></script>
+	<script type="text/javascript" src="../../js/notify/noread.js" ></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var notity = new PT.Notify();
+			var noread = new PT.Notify.noread();
+		});
+	</script>
+
+</html>

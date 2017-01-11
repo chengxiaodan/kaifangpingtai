@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/developer/devinfo.css" />
+		<style>
+			.dev-container .dev-wrapper ul {
+				margin-top: 40px;
+			}
+			
+			.dev-container .dev-wrapper ul li {
+				margin-top: 0px;
+				font-size: 14px;
+				color: #424242;
+			}
+			
+			.dev-container .dev-wrapper .textareali textarea {
+				border: 0px;
+				overflow-y: hidden;
+				resize: none;
+			}
+			
+			.dev-container .dev-wrapper .photo {
+				border: 0px;
+			}
+			
+			.dev-container .dev-wrapper .photo img {
+				width: auto;
+				height: auto;
+				border: 0px;
+			}
+			.dev-container .dev-wrapper ul li .m3 {
+				width: auto;
+			}
+		</style>
+		<title>管理中心-应用商店</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="appinfo">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>管理中心&nbsp;&gt;&nbsp;</li>
+						<li>应用商店&nbsp;&gt;&nbsp;</li>
+						<li>应用详情&nbsp;&gt;&nbsp;</li>
+						<li>应用信息</li>
+					</ul>
+				</div>
+				<div class="dev-wrapper">
+					<div class="dev-title dev-h3">安装包信息</div>
+					<ul>
+						<li>
+							<label>包名</label>
+							<span class="inputname" name="packgename"></span>
+						</li>
+						<li>
+							<label>版本号</label>
+							<span class="inputname" name="version"></span>
+						</li>
+						<li>
+							<label>大小</label>
+							<span class="inputname" name="size"></span>
+						</li>
+						<li>
+							<label>MD5</label>
+							<span class="inputname" name="md5"></span>
+						</li>
+						<li>
+							<label>上传时间</label>
+							<span class="inputname" name="uploadTime"></span>
+						</li>
+					</ul>
+					<div class="dev-title dev-h2">基本信息</div>
+					<ul>
+						<li>
+							<label>应用类型</label>
+							<span class="inputname" name="apptype"></span>
+						</li>
+						<li>
+							<label>APP ID</label>
+							<span class="inputname" name="appid"></span>
+						</li>
+						<li>
+							<label>APP KEY</label>
+							<span class="inputname" name="appkey"></span>
+						</li>
+						<li>
+							<label>应用名称</label>
+							<span class="inputname" name="appname"></span>
+						</li>
+						<li>
+							<label>适合年龄段</label>
+							<span class="inputname" name="agePart"></span>
+						</li>
+						<li>
+							<label>资费类型</label>
+							<span class="inputname" name="free"></span>
+						</li>
+						<li>
+							<label>分类标签</label>
+							<span class="inputname" name="classify"></span>
+						</li>
+						<li>
+							<label>支持语言</label>
+							<span name="languge" class="inputname"></span>
+						</li>
+						<li>
+							<label>应用简介</label>
+							<div name="appintro" class="introduction">
+							</div>
+						</li>
+						<li>
+							<label>关键词</label>
+							<span name="keywords" class="m3 inputname"></span>
+						</li>
+						<li>
+							<label>版本介绍</label>
+							<div name="vsintro" class="introduction">
+							</div>
+						</li>
+					</ul>
+					<div class="dev-title dev-h2">应用素材</div>
+					<ul>
+						<li>
+							<label class="phototitle">应用图标</label>
+							<div class="photomain m40">
+								<img name="applogo">
+							</div>
+						</li>
+						<li>
+							<label class="phototitle">应用截图</label>
+							<div class="photomain m40">
+								<div class="photo"><img name="appcut1"></div>
+								<div class="photo"><img name="appcut2"></div>
+								<div class="photo"><img name="appcut3"></div><br />
+								<div class="photo"><img name="appcut4"></div>
+								<div class="photo"><img name="appcut5"></div>
+							</div>
+						</li>
+						<li>
+							<label class="phototitle">应用视频<span>(选填)</span></label>
+							<div class="photomain">
+								<div name="appVideo" class="file-item" style="width: 256px; height: 256px;">
+									<a class="video" target="_blank"></a>
+									<video>
+										<source  type="video/mp4">
+										<source  type="video/avi">
+										<source  type="video/mov"><object type="application/x-shockwave-flash" data="myvideo.mp4"><param name="movie" value="myvideo.mp4"><param name="flashvars" value="autostart=true&amp;file=myvideo.mp4"></object> 当前浏览器不支持 video直接播放，点击这里下载视频：
+										<a >下载视频</a>
+									</video>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="dev-title dev-h2">其他信息</div>
+					<ul>
+						<li>
+							<label class="phototitle">上传版权证明<span>(选填)</span></label>
+							<div class="photomain">
+								<img name="copyRight">
+							</div>
+						</li>
+					</ul>
+					<div class="dev-center fixwh pb-center">
+						<a name="editbtn" class="bbtn btn-sign" tabindex="23">编辑</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/manage/appinfo.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			new PT.Creatapp.appinfo({
+				domSelector: "#appinfo"
+			});
+		});
+	</script>
+
+</html>

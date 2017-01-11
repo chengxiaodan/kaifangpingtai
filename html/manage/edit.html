@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../js/plugin/confirmBox/showBo.css" />
+		<link rel="stylesheet" type="text/css" href="../../js/plugin/webuploader/webuploader.css">
+		<link rel="stylesheet" href="../../css/developer/devinfo.css" />
+		<link rel="stylesheet" href="../../css/create_app/createApp.css" />
+		<style>
+			.dev-container .dev-wrapper .checkitem .checkbox {
+				width: 18px;
+			}
+		</style>
+		<title>管理中心</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="add">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>管理中心&nbsp;&gt;&nbsp;</li>
+						<li>应用商店&nbsp;&gt;&nbsp;</li>
+						<li>应用详情&nbsp;&gt;&nbsp;</li>
+						<li>编辑</li>
+					</ul>
+				</div>
+				<div class="dev-wrapper">
+					<div class="dev-title dev-h3">安装包信息</div>
+					<!--<section id="appinfo">-->
+					<ul>
+						<li class="m2">
+							<label for="packgename">包名</label>
+							<span class="inputname" id="packgename" name="packgename"></span>
+						</li>
+						<li class="m2">
+							<label for="version">版本号</label>
+							<span class="inputname" id="version" name="version"></span>
+						</li>
+						<li class="m2">
+							<label for="size">大小</label>
+							<span class="inputname" id="size" name="size"></span>
+						</li>
+						<li class="m2">
+							<label for="md5">MD5</label>
+							<span class="inputname" id="md5" name="md5"></span>
+						</li>
+					</ul>
+					<!--</section>-->
+					<div class="dev-title dev-h3">基本信息</div>
+					<ul>
+						<li class="m2">
+							<label for="apptype">应用类型</label>
+							<span class="inputname" name="apptype" id="apptype"></span>
+						</li>
+						<li class="m2">
+							<label for="appid">APP ID</label>
+							<span class="inputname" name="appid" id="appid"></span>
+						</li>
+						<li class="m2">
+							<label for="appkey">APP KEY</label>
+							<span class="inputname" name="appkey" id="appkey"></span>
+						</li>
+						<li class="m2">
+							<label for="appname">应用名称</label>
+							<input type="text" maxlength="16" class="inputname" name="appname" id="appname" placeholder="应用名称不超过8个汉字或16个字符" tabindex="1" />
+						</li>
+						<li>
+							<label>适合年龄段</label>
+							<div class="part-age">
+								<input type="number" name="minage" maxlength="3" tabindex="2" />
+								<hr />
+								<input type="number" name="maxage" maxlength="3" tabindex="3" />
+								<div class="tipdiv">默认适合年龄段为0＋，不填写表示不限制最低/高适合年龄。</div>
+							</div>
+						</li>
+						<li>
+							<label>资质类型</label>
+							<div class="radiobox">
+								<div class="checkbox">
+									<input type="radio" value="0" name="free" id="cba" checked="checked" />
+									<label for="cba" class="btn-radio"></label>
+									<span>免费</span>
+								</div>
+								<div class="checkbox">
+									<input type="radio" value="1" name="free" id="nba" />
+									<label for="nba" class="btn-radio"></label>
+									<span>收费</span>
+									<div class="tipdiv">
+										<input type="number" name="money" id="money" placeholder="请输入金额" maxlength="25" tabindex="4" />
+										<span>RMB</span><strong>（与葡萄币的兑换比例1:1）</strong>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="photoli7">
+							<label style="vertical-align: sub;">分类标签</label>
+							<div class="photomain">
+								<div id="classify" class='flexbox pb-flex'>
+								</div>
+							</div>
+						</li>
+						<li>
+							<label>支持语言</label>
+							<div id="languges" class="radiobox">
+								<div class="checkbox">
+									<input type="checkbox" name="checkbox" id="chinese" checked="checked" />
+									<label for="chinese" class="btn-check"></label>
+									<span>简体中文</span>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" name="checkbox" id="fchinese" checked="checked" />
+									<label for="fchinese" class="btn-check"></label>
+									<span>繁体中文</span>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" name="checkbox" id="eglish" checked="checked" />
+									<label for="eglish" class="btn-check"></label>
+									<span>英语</span>
+								</div>
+							</div>
+						</li>
+						<li class="textareali">
+							<label class="phototitle">应用简介</label>
+							<div class="photomain">
+								<textarea id="appintro" maxlength="500" placeholder="请用500字以内的文字描述您的应用" tabindex="4"></textarea>
+								<div class="count">还剩&nbsp;<span>0</span>&nbsp;字</div>
+							</div>
+						</li>
+						<li>
+							<label class="phototitle">关键词</label>
+							<div class="photomain">
+								<input id="keywordText" type="text" class="inputname" placeholder="请选择下面的关键词" tabindex="5" />
+								<ul id="keyword"></ul>
+							</div>
+						</li>
+						<li class="textareali">
+							<label class="phototitle">版本介绍</label>
+							<div class="photomain">
+								<textarea id="versioninfo" maxlength="500" placeholder="请用500字以内的文字描述您的版本" tabindex="6"></textarea>
+								<div class="count">还剩&nbsp;<span>0</span>&nbsp;字</div>
+							</div>
+						</li>
+					</ul>
+					<div class="dev-title dev-h3">应用素材</div>
+					<ul>
+						<li class="photoli3">
+							<label class="phototitle">应用图标</label>
+							<div class="photomain">
+								<div id="applogo" class="uploader-list">
+									<div class="photo"></div>
+								</div>
+								<div id="applogo-file" class="webuploader-container">上传应用图标</div>
+								<div class="photo-desc">
+									请提供应用图标，图片格式为jpg，尺寸为256＊256px，大小不超过 1 M 。
+								</div>
+							</div>
+						</li>
+						<li class="photoli5">
+							<label class="phototitle">应用截图</label>
+							<div id="uploader-demo" class="photomain">
+								<!--用来存放item-->
+								<div id="appcut" class="uploader-list">
+									<div class="photo"></div>
+								</div>
+								<div id="appcut-file" class="webuploader-container">上传应用截图</div>
+								<div class="photo-desc">
+									请上传3-5张应用截图，规格：1080*1920。
+								</div>
+							</div>
+						</li>
+						<li class="photoli6">
+							<label class="phototitle">应用视频<span>(选填)</span></label>
+							<div class="photomain">
+								<div id="appvideo" class="uploader-list">
+									<div class="photo"></div>
+								</div>
+								<div id="appvideo-file" class="webuploader-container">上传应用视频</div>
+								<div class="photo-desc">
+									视频格式支持avi 、mov 、mp4 ，大小不超过 50M 。
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="dev-title dev-h3">其他信息</div>
+					<ul>
+						<li class="photoli3">
+							<label class="phototitle">上传版权证明<span>(选填)</span></label>
+							<div class="photomain">
+								<div id="copyright" class="uploader-list">
+									<div class="photo"></div>
+								</div>
+								<div id="copyright-file" class="webuploader-container">上传版权证明</div>
+								<div class="photo-desc">
+									个人 / 企业开发者资质证明提交，请参考葡萄资质证明指引，仅支持 jpeg 或 png 格式。
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="dev-center fixwh pb-center">
+						<a name="savebtn" class="bbtn bbtn-check mr1" tabindex="8">保存</a>
+						<a name="submitbtn" class="bbtn bbtn-check" tabindex="9">提交审核</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/plugin/confirmBox/Showbo.js"></script>
+	<script src="../../js/plugin/progress.js"></script>
+	<script src="../../js/manage/edit.js"></script>
+	<!--引入JS-->
+	<script type="text/javascript" src="../../js/plugin/webuploader/webuploader.min.js"></script>
+	<script type="text/javascript" src="../../js/plugin/webuploader/uploader.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			new PT.Creatapp.edit({
+				domSelector: $("#add")
+			});
+		});
+	</script>
+
+</html>

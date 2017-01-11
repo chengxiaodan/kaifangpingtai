@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/notify/notify_detail.css" />
+		<link rel="stylesheet" href="../../css/perfectPager.css" />
+		<title>通知中心</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="notify">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>通知中心&nbsp;&gt;&nbsp;</li>
+						<li>通知详情</li>
+					</ul>
+				</div>
+				<div class="notify-wrapper">
+					<a href="notify.html" class="bbtn goback">返回</a>
+					<div class="notify-header">
+					</div>
+					<div class="notify-body">
+					</div>
+					<div id="notifypage" class="notify-page">
+						<!--<a id="prevPage"  class="prevPage">&lt;&nbsp;上一条</a>
+						<a id="nextPage" class="nextPage">下一条&nbsp;&gt;</a>-->
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/notify/notify_detail.js"></script>
+	<script src="../../js/plugin/page/jquery.perfectPager.one.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var detail = new PT.Notify.detail();
+		});
+	</script>
+
+</html>

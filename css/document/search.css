@@ -1,0 +1,61 @@
+.dev-container .doc-wrapper {
+	background: #ffffff;
+	border: 1px solid #ededed;
+	border-radius: 4px;
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	
+}
+
+.dev-container .doc-wrapper .doc-title {
+	width: inherit;
+	text-align: left;
+	text-align: -moz-left;
+	text-align: -webkit-left;
+	border-bottom: 1px dashed #EDEDED;
+	font-size: 24px;
+	color: #424242;
+}
+
+.dev-container .doc-wrapper .doc-h2 {
+	height: 80px;
+	line-height: 80px;
+	padding-left: 40px;
+}
+
+.doc-wrapper .doc-main {
+	width: 100%;
+	height: auto;
+	padding: 0px 60px;
+}
+
+.doc-wrapper .doc-main article {
+	margin-top: 40px;
+}
+
+.doc-wrapper .doc-main article .article {
+	font-size: 16px;
+	color: #adadad;
+	line-height: 26px;
+	text-align: justify;
+}
+.doc-wrapper .doc-main article p span {
+	color: #5CB85C;
+}
+.doc-wrapper .doc-main article a{
+	color: #424242;	
+}
+.doc-wrapper .doc-main article a:hover{
+	color: #8C61DA;	
+	/*text-decoration: underline;*/
+}
+.doc-wrapper .dev-page {
+	height: 110px;
+	width: 100%;
+	line-height: 110px;
+	/*position: absolute;
+	bottom: 24px;
+	left: 0px;
+	right: 0px;*/
+}

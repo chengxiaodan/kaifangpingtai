@@ -1,0 +1,315 @@
+.public {
+	width: 100%;
+	height: 540px;
+	min-width: 1200px;
+	font-family: "微软雅黑";
+}
+
+.title1 {
+	font-size: 28px;
+	color: #424242;
+	letter-spacing: 2.09px;
+	text-align: center;
+	width: 100%;
+	height: 160px;
+	line-height: 160px;
+	margin: 0 auto;
+}
+/*
+ * 轮播图
+ */
+#banner {
+	width: 100%;
+	min-width: 1200px;
+}
+.swiper-container {
+	width: 100%;
+	height: 441px;
+	text-align: center;
+	line-height: 441px;
+}
+
+.swiper-wrapper {
+	width: 100%;
+	position: relative;
+}
+.swiper-wrapper .icon1 {
+	/*background: url(../img/1.jpg) no-repeat center center;*/
+}
+
+.swiper-wrapper .icon2 {
+	/*background: url(../img/2.jpg) no-repeat center center;*/
+}
+
+.swiper-wrapper .icon3 {
+	/*background: url(../img/3.jpg) no-repeat center center;*/
+}
+.swiper-slide {
+		/*Mozilla*/
+	/*auto(原始图片大小) || number(数值) || percentage(百分比) || cover(放大铺满) || contain(缩小铺满)*/
+	-moz-background-size: 100% 100%;
+	/*Webkit*/
+	-webkit-background-size:100% 100%;
+	/*Oprea*/
+	-o-background-size: 100% 100%;
+	/*W3c标准*/
+	background-size: 100% 100% ;
+	height: 441px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.pagination {
+	position: absolute;
+	z-index: 20;
+	width: 100%;
+	bottom: 36px;
+	left: 0;
+	text-align: center;
+	font-size: 0px;
+	line-height: 12px;
+}
+
+.swiper-pagination-switch {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-right: 28px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+
+.swiper-active-switch {
+	background: #555;
+}
+
+.swiper-container .btn {
+	width: 100%;
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	top: 50%;
+	margin: 0 40px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 60px;
+	color: white;
+	display: none;
+}
+
+.swiper-container:hover .btn {
+	display: block;
+}
+
+.swiper-container .btn_l {
+	left: 0;
+	background: url(../img/banner-left.png) no-repeat center;
+}
+
+.swiper-container .btn_r {
+	right: 0;
+	background: url(../img/banner-right.png) no-repeat center;
+}
+
+/*葡萄开放平台*/
+
+.ptdev {
+	background-color: #FFFFFF;
+}
+.ptdev .ptdev_part {
+	width: 1200px;
+	height: 220px;
+	margin: 0 auto;
+}
+
+.ptdev ul {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	word-break: break-word;
+	margin-top: 55px;
+}
+
+.ptdev ul li {
+	width: 312px;
+	height: 220px;
+	float: left;
+	margin-right: 132px;
+	position: relative;
+}
+.ptdev ul li:last-child {
+	margin-right: 0px;
+}
+
+.ptdev ul li figure {
+	width: 312px;
+	height: 220px;
+	text-align: center;
+}
+
+.ptdev ul li figure figcaption {
+	font-size: 18px;
+	color: #424242;
+	letter-spacing: 1.34px;
+	margin-top: 42px;
+}
+
+.ptdev ul li figure p {
+	font-size: 14px;
+	color: #b2b2b2;
+	letter-spacing: 1.04px;
+	margin-top: 25px;
+	line-height: 130%;
+}
+.ptbtn {
+	height: 52px;
+	text-align: center;
+	width: 242px;
+	margin: 0 auto;
+}
+.btn-add {
+	width: 242px;
+	height: 52px;
+	line-height: 52px;
+}
+/*应用商店*/
+
+.appStore {
+	background-color: #fafafa;
+}
+
+.appStore .app_part {
+	width: 1200px;
+	height: 220px;
+	margin: 0 auto;
+}
+
+.appStore ul {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	word-break: break-word;
+	margin-top: 40px;
+}
+
+.appStore ul li {
+	width: 312px;
+	height: 220px;
+	float: left;
+	margin-right: 132px;
+	position: relative;
+}
+.appStore ul li:last-child {
+	margin-right: 0px;
+}
+
+.appStore ul li figure {
+	width: 312px;
+	height: 220px;
+	text-align: center;
+}
+
+.appStore ul li figure figcaption {
+	font-size: 18px;
+	color: #424242;
+	letter-spacing: 1.34px;
+	margin-top: 42px;
+}
+
+.appStore ul li figure p {
+	font-size: 14px;
+	color: #b2b2b2;
+	letter-spacing: 1.04px;
+	margin-top: 25px;
+	line-height: 130%;
+}
+
+
+/*开放服务*/
+
+.service {
+	background-color: #ffffff;
+}
+
+.service .service_part {
+	width: 1200px;
+	height: 342px;
+	margin: 0 auto;
+}
+
+.service ul {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	word-break: break-word;
+	margin-top: 30px;
+}
+
+.service ul li {
+	width: 345px;
+	height: 100px;
+	float: left;
+	margin-left: 55px;
+	position: relative;
+	margin-bottom: 58px;
+}
+
+.service figure {
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+}
+
+.service .header {
+	font-size: 18px;
+	color: #424242;
+	letter-spacing: 1.34px;
+	text-align: left;
+	height: 18px;
+	position: absolute;
+	top: 10px;
+	left: 130px;
+}
+
+.service .body {
+	width: 232px;
+	text-align: left;
+	font-size: 14px;
+	color: #b2b2b2;
+	letter-spacing: 1.04px;
+	position: absolute;
+	top: 45px;
+	left: 130px;
+	line-height: 130%;
+}
+
+
+/*合作伙伴*/
+
+.cptPartner {
+	background-color: #fafafa;
+}
+
+.cptPartner .logo {
+	width: 1200px;
+	height: 380px;
+	margin: 0 auto;
+}
+
+.cptPartner ul {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	word-break: break-word;
+}
+
+.cptPartner ul li {
+	width: 195px;
+	height: 118px;
+	float: left;
+	margin-left: 45px;
+	text-align: center;
+	line-height: 118px;
+}

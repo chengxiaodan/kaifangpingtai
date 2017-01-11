@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../js/plugin/jquerydate/datepicker.css" />
+		<link rel="stylesheet" href="../../css/data_analysis/data_analysis.css" />
+		<title>管理中心-应用统计</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="data_analysis">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>管理中心&nbsp;&gt;&nbsp;</li>
+						<li>应用商店&nbsp;&gt;&nbsp;</li>
+						<li>应用统计</li>
+					</ul>
+				</div>
+				<div class="dev-wrapper">
+					<div class="items dev-item1 pb-flex">
+						<figure class="pb-itemsflex pb-order1">
+							<div class="icon pb-center">
+								<img id="applogo" width="64" height="64" />
+							</div>
+							<div class="right-part">
+								<figcaption id="apptitle"></figcaption>
+								<div id="checkState" class="check-state normalbtn"></div>
+								<div id="reason" class="reason">
+									<div id="reason-title" class="reason-title pb-center">未通过原因</div>
+									<div id="reason-body" class="reason-body">请提应用信息不完整，应用海报重复，应用图标设计不能突出APP设计元素，应用描述不能完整概括应用功能、特点。</div>
+								</div>
+							</div>
+						</figure>
+						<div class="appinfo pb-itemsflex pb-order2">
+							<div class="keyvalue">
+								<span class="key1">App ID</span>
+								<span class="value">:&nbsp;<span id="appId"></span></span>
+							</div>
+							<div class="keyvalue">
+								<span class="key1">App ID Key</span>
+								<span class="value">:&nbsp;<span id="appIdKey"></span></span>
+							</div>
+						</div>
+						<div class="appinfo pb-itemsflex pb-order3">
+							<div class="keyvalue">
+								<span class="key2">包名</span>
+								<span class="value">:&nbsp;<span id="packgename"></span></span>
+							</div>
+							<div class="keyvalue">
+								<span class="key2">版本号</span>
+								<span class="value">:&nbsp;<span id="version"></span></span>
+							</div>
+						</div>
+					</div>
+					<div class="items dev-item2">
+						<input type="radio" id="outline" value="1" name="tractor" checked='checked' hidden="hidden" />
+						<input type="radio" id="down_analyse" value="2" name="tractor" hidden="hidden" />
+						<input type="radio" id="dynamic" value="3" name="tractor" hidden="hidden" />
+						<input type="radio" id="openup" value="4" name="tractor" hidden="hidden" />
+						<nav class="item2-nav">
+							<label class="nav-label" for="outline">概览</label>
+							<label class="nav-label" for="down_analyse">下载分析</label>
+							<label class="nav-label" for="dynamic">活跃分析</label>
+							<label class="nav-label" for="openup">启动分析</label>
+						</nav>
+						<div class="outline itemtable">
+							<div class="dev-item2-1">
+								<div class="chose-date" id="outline_date">
+									<input type="datetime" class='custom-date' oninput="Analysis_util.getDateTime('outline')" onpropertychange="Analysis_util.getDateTime('outline')"/>
+									<div class="radiobox">
+										<div class="checkbox">
+											<input type="radio" value="1" name="timeDifference" id="timeDifference1" />
+											<label for="timeDifference1" class="btn-radio"></label>
+											<span>昨日</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="7" name="timeDifference" id="timeDifference2" />
+											<label for="timeDifference2" class="btn-radio"></label>
+											<span>近一周</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="30" name="timeDifference" id="timeDifference3" />
+											<label for="timeDifference3" class="btn-radio"></label>
+											<span>近一月</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dev-item2-2">
+								<div class="items">
+									<div class="title pb-center">
+										<span class="heading">数据统计</span>
+										<div class="data-time">数据信息截止至<span id="endDate"></span></div>
+									</div>
+									<div class="data-anlasys pb-flex">
+										<div class="pb-itemsflex pb-order1">
+											<div class="data-info">
+												<label>累计下载次数</label><br />
+												<span id="downCountTotal"></span>
+											</div>
+											<div class="data-info">
+												<label>累计下载人数</label><br />
+												<span id="downUserTotal"></span>
+											</div>
+										</div>
+										<div class="pb-itemsflex pb-order2">
+											<div class="data-info">
+												<label>累计用户</label><br />
+												<span id="userTotal"></span>
+											</div>
+											<div class="data-info">
+												<label>累计启动次数</label><br />
+												<span id="startCount"></span>
+											</div>
+										</div>
+										<div class="pb-itemsflex pb-order3">
+											<div class="data-info">
+												<label>昨日新增用户</label><br />
+												<span id="yAddUser"></span>
+											</div>
+											<div class="data-info">
+												<label>昨日下载次数</label><br />
+												<span id="yDownCount"></span>
+											</div>
+										</div>
+										<div class="pb-itemsflex pb-order4">
+											<div class="data-info">
+												<label>昨日下载人数</label><br />
+												<span id="yDownUser"></span>
+											</div>
+											<div class="data-info">
+												<label>昨日启动次数</label><br />
+												<span id="yStartCount"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="chart-tab">
+									<input type="radio" id="adduser" value="1" name="dev-chart" checked='checked' hidden="hidden" />
+									<input type="radio" id="acivityuser" value="2" name="dev-chart" hidden="hidden" />
+									<input type="radio" id="downuser" value="3" name="dev-chart" hidden="hidden" />
+									<input type="radio" id="downcount" value="4" name="dev-chart" hidden="hidden" />
+									<input type="radio" id="opencount" value="5" name="dev-chart" hidden="hidden" />
+									<nav class="chart-nav">
+										<label class="chart-label" for="adduser">新增用户</label>
+										<label class="chart-label" for="acivityuser">活跃用户</label>
+										<label class="chart-label" for="downuser">下载人数</label>
+										<label class="chart-label" for="downcount">下载次数</label>
+										<label class="chart-label" for="opencount">启动次数</label>
+									</nav>
+									<div class="adduser itemtable"></div>
+									<div class="acivityuser itemtable"></div>
+									<div class="downuser itemtable"></div>
+									<div class="downcount itemtable"></div>
+									<div class="opencount itemtable"></div>
+								</div>
+							</div>
+						</div>
+						<div class="down-analyse itemtable">
+							<div class="dev-item2-1">
+								<div class="chose-date" id="down_analyse_date">
+									<input type="datetime" class='custom-date'>
+									<div class="radiobox">
+										<div class="checkbox">
+											<input type="radio" value="1" name="da_timeDifference" id="da_timeDifference1" />
+											<label for="da_timeDifference1" class="btn-radio"></label>
+											<span>昨日</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="7" name="da_timeDifference" id="da_timeDifference2" />
+											<label for="da_timeDifference2" class="btn-radio"></label>
+											<span>近一周</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="30" name="da_timeDifference" id="da_timeDifference3" />
+											<label for="da_timeDifference3" class="btn-radio"></label>
+											<span>近一月</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dev-item2-2">
+								<div class="chart-tab">
+									<input type="radio" id="da_downuser" value="1" name="da-chart" hidden="hidden" checked />
+									<input type="radio" id="da_downcount" value="2" name="da-chart" hidden="hidden" />
+									<input type="radio" id="da_adduser" value="3" name="da-chart" hidden="hidden" />
+									<nav class="chart-nav">
+										<label class="chart-label" for="da_downuser">下载人数</label>
+										<label class="chart-label" for="da_downcount">下载次数</label>
+										<label class="chart-label" for="da_adduser">新增用户</label>
+									</nav>
+									<div class="da_downuser itemtable"></div>
+									<div class="da_downcount itemtable"></div>
+									<div class="da_adduser itemtable"></div>
+								</div>
+							</div>
+							<div class="item-table">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>日期</th>
+											<th>累计用户数</th>
+											<th>累计下载次数</th>
+											<th>新增用户数</th>
+											<th>当日下载人数</th>
+											<th>当日下载次数</th>
+										</tr>
+									</thead>
+									<tbody id="daTable">
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="dynamic itemtable">
+							<div class="dev-item2-1">
+								<div class="chose-date" id="dynamic_date">
+									<input type="datetime" class='custom-date'>
+									<div class="radiobox">
+										<div class="checkbox">
+											<input type="radio" value="1" name="dy_timeDifference" id="dy_timeDifference1" />
+											<label for="dy_timeDifference1" class="btn-radio"></label>
+											<span>昨日</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="7" name="dy_timeDifference" id="dy_timeDifference2" />
+											<label for="dy_timeDifference2" class="btn-radio"></label>
+											<span>近一周</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="30" name="dy_timeDifference" id="dy_timeDifference3" />
+											<label for="dy_timeDifference3" class="btn-radio"></label>
+											<span>近一月</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dev-item2-2">
+								<div class="chart-tab">
+									<input type="radio" id="dy_adduser" value="1" name="dy-chart" hidden="hidden" checked />
+									<input type="radio" id="dy_acivityuser" value="2" name="dy-chart" hidden="hidden" />
+									<nav class="chart-nav">
+										<label class="chart-label" for="dy_adduser">新增用户</label>
+										<label class="chart-label" for="dy_acivityuser">活跃用户</label>
+									</nav>
+									<div class="dy_adduser itemtable"></div>
+									<div class="dy_acivityuser itemtable"></div>
+								</div>
+							</div>
+							<div class="item-table">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>日期</th>
+											<th>新增用户</th>
+											<th>活跃用户</th>
+											<th>近7日活跃用户</th>
+											<th>近30日活跃用户</th>
+										</tr>
+									</thead>
+									<tbody id="dyTable">
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="openup itemtable">
+							<div class="dev-item2-1">
+								<div class="chose-date" id="openup_date">
+									<input type="datetime" class='custom-date'>
+									<div class="radiobox">
+										<div class="checkbox">
+											<input type="radio" value="1" name="ou_timeDifference" id="ou_timeDifference1" />
+											<label for="ou_timeDifference1" class="btn-radio"></label>
+											<span>昨日</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="7" name="ou_timeDifference" id="ou_timeDifference2" />
+											<label for="ou_timeDifference2" class="btn-radio"></label>
+											<span>近一周</span>
+										</div>
+										<div class="checkbox">
+											<input type="radio" value="30" name="ou_timeDifference" id="ou_timeDifference3" />
+											<label for="ou_timeDifference3" class="btn-radio"></label>
+											<span>近一月</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="dev-item2-2">
+								<div class="chart-tab">
+									<input type="radio" id="ou_user" value="1" name="ou-chart" hidden="hidden" checked />
+									<input type="radio" id="ou_count" value="2" name="ou-chart" hidden="hidden" />
+									<nav class="chart-nav">
+										<label class="chart-label" for="ou_user">启动人数</label>
+										<label class="chart-label" for="ou_count">启动次数</label>
+									</nav>
+									<div class="ou_user itemtable"></div>
+									<div class="ou_count itemtable"></div>
+								</div>
+							</div>
+							<div class="item-table">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>日期</th>
+											<th>启用人数</th>
+											<th>启动次数</th>
+											<th>近7日活跃用户</th>
+											<th>近30日活跃用户</th>
+										</tr>
+									</thead>
+									<tbody id="ouTable">
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/jquerydate/jquery-Datepicker.js"></script>
+	<script src="../../js/plugin/echart/echarts-all.js"></script>
+	<script src="../../js/plugin/echart/echart.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/data_analysis/manageUtil.js"></script>
+	<script src="../../js/data_analysis/data_analysis.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var dataAnalysis = new PT.Manage.dataAnalysis();
+		});
+	</script>
+
+</html>

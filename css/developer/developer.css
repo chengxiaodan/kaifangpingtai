@@ -1,0 +1,109 @@
+.dev-body {
+	height: 937px;
+	margin-top: 95px;
+}
+
+.dev-body .dev-header {
+	font-size: 22px;
+	color: #424242;
+}
+.dev-body .dev-header2 {
+	font-size: 22px;
+	color: #424242;
+}
+
+.dev-body .dev-tip {
+	font-size: 12px;
+	color: #9e9e9e;
+	letter-spacing: 0.89px;
+	width: 315px;
+	height: 21px;
+	padding-left: 27px;
+	margin-top: 40px;
+	line-height: 21px;
+	background: url(../../img/developer/warn.png) no-repeat center left;
+}
+
+.dev-body .dev-tip2 {
+	width: 271px;
+	height: 20px;
+	margin-top: 36px;
+	line-height: 20px;
+	font-size: 18px;
+	color: #9e9e9e;
+	letter-spacing: 1.34px;
+}
+
+.dev-body .dev-type {
+	width: 100%;
+	height: 242px;
+	margin-top: 45px;
+}
+
+.dev-body .dev-type ul {
+	width: 504px;
+	height: 242px;
+}
+.dev-body .dev-type ul li {
+	border: 1px solid #e9e5e5;
+	border-radius: 8px;
+	width: 200px;
+	height: 240px;
+	margin-left: 100px;
+	float: left;
+	cursor: pointer;
+	cursor: -ms-pointer;
+}
+
+.dev-body .dev-type ul li:first-child {
+	margin-left: 0px;
+}
+
+.dev-body .dev-type ul li:hover {
+	background: #ffffff;
+	border: 1px solid #e9e5e5;
+	box-shadow: 0px 1px 4px 0px rgba(216, 216, 216, 0.50), 1px 3px 14px 0px rgba(0, 0, 0, 0.17);
+	border-radius: 8px;
+	width: 200px;
+	height: 240px;
+}
+
+.dev-body .dev-type .type-header {
+	width: 200px;
+	height: 132px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.dev-body .dev-type .owner {
+	background-image: url(../../img/developer/owner.png);
+}
+
+.dev-body .dev-type .business {
+	background-image: url(../../img/developer/business.png);
+}
+
+.dev-body .dev-type .beautify {
+	background-image: url(../../img/index/s_beautify.png);
+}
+
+.dev-body .dev-type .appStore {
+	background-image: url(../../img/index/s_app.png);
+}
+
+.dev-body .dev-type .type-tip {
+	font-size: 18px;
+	color: #424242;
+	width: 100%;
+	height: 18px;
+}
+
+.dev-body .dev-type .type-desc {
+	font-size: 14px;
+	color: #bdbdbd;
+	letter-spacing: 0px;
+	line-height: 19px;
+	width: 100%;
+	height: 38px;
+	margin-top: 14px;
+}

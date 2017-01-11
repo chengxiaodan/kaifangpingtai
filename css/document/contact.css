@@ -1,0 +1,64 @@
+.dev-container .con-wrapper {
+	background: #ffffff;
+	border: 1px solid #ededed;
+	border-radius: 4px;
+	width: 1200px;
+	height: 990px;
+	margin: 0 auto;
+}
+
+.con-wrapper .con-main {
+	width: 100%;
+	height: auto;
+	padding-left: 68px;
+	padding-top: 132px;
+}
+
+.con-wrapper .con-main ul li {
+	float: left;
+	width: 288px;
+	margin-right: 88px;
+	text-align: center;
+	text-align: -moz-center;
+	text-align: -webkit-center;
+}
+.con-wrapper .con-main ul li:last-child {
+	margin-right: 0px;
+}
+
+.con-wrapper .con-main ul li .items {
+	width: 100%;
+	height: auto;
+}
+
+.con-main ul li .items figure {
+	width: 295px;
+	height: 133px;
+	text-align: center;
+	text-align: -webkit-center;
+	text-align: -moz-center;
+	font-size: 18px;
+	color: #4A4A4A;
+	margin-bottom: 32px;
+}
+
+.con-main ul li .items figcaption {
+	margin-top: 32px;
+}
+.con-main ul li .items p {
+	margin: 0px;
+	padding: 0px;
+	line-height: 118%;
+}
+.con-main ul li .items .fonttype1 {
+	font-size: 14px;
+	color: #4A4A4A;
+	letter-spacing: 1.19px;
+	margin-bottom: 10px;
+}
+.con-main ul li .items .fonttype2 {
+	font-size: 12px;
+	color: #ADADAD;
+	letter-spacing: 0.89px;
+	margin-bottom: 20px;
+}

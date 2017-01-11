@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../js/plugin/jqueryValidate/tip-yellowsimple/tip-redsimple.css" />
+		<link rel="stylesheet" href="../../css/developer/appstore.css" />
+		<link rel="stylesheet" href="../../css/developer/devinfo.css" />
+		<link rel="stylesheet" href="../../css/developer/middlebox.css" />
+		<link rel="stylesheet" href="../../css/account_info/account.css" />
+		<title>个人中心</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="appstore">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>个人中心</li>
+					</ul>
+				</div>
+				<div class="dev-wrapper">
+					<div class="wrapper-nav">
+						<input type="radio" id="basicinfo" value="1" name="tractor" checked='checked' hidden="hidden" />
+						<input type="radio" id="datacount" value="2" name="tractor" hidden="hidden" />
+						<input type="radio" id="finreport" value="3" name="tractor" hidden="hidden" />
+						<nav class="nav">
+							<label for="basicinfo">帐户信息</label>
+							<label for="datacount">开发者信息</label>
+							<label for="finreport">银行帐户信息</label>
+						</nav>
+						<div id="basicinfo_item" class="basicinfo itemtable">
+							<div class="appinfo">
+								<span class="key">登录邮箱</span>
+								<span id="userEmail" class="value"></span>
+								<span id="checkState" class="check-state"></span><br />
+								<span class="key2">登录密码</span>
+								<span id="showbox" class="value2 pb-cursor">修改密码</span>
+							</div>
+						</div>
+						<div id="datacount_item" class="datacount itemtable">
+							<section id="render">
+							</section>
+						</div>
+						<div id="finreport_item" class="finreport itemtable">
+							<section id="bankAccount"></section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="downline-box">
+			<div class="overlay"></div>
+			<div class="modal">
+				<div class="downline-box">
+					<div class="title pb-center">
+						修改密码
+						<div id="close" class="close pb-cursor"></div>
+					</div>
+					<input type="password" name="password1" class="form-control" placeholder="请输入当前登录密码" />
+					<input type="password" name="password2" class="form-control" placeholder="请输入新密码" />
+					<input type="password" name="password3" class="form-control" placeholder="请再次输入密码" />
+					<a id="updatePassword" class="bbtn btn-sign">提交申请</a>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js "></script>
+	<script type="text/javascript" src="../../js/plugin/jqueryValidate/jquery.poshytip.js"></script>
+	<script src="../../js/plugin/ptdev_util.js "></script>
+	<script src="../../js/account_info/datacount.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/account_info/basicinfo.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/account_info/bankAccount.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript ">
+		$(document).ready(function() {
+			var basicinfo = new PT.Account.basicinfo('#basicinfo_item'); //账户信息
+			var datacount = new PT.Account.datacount(); //开发者信息
+			var bankAccount = new PT.Account.bankAccount('#finreport_item');//银行账户信息
+		});
+	</script>
+
+</html>

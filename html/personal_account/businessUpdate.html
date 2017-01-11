@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.dev-container .dev-wrapper .photomain {
+				margin-left: 0px;
+			}
+			.dev-container .dev-wrapper ul li:first-child {
+				margin-top: 40px;
+			}
+			.dev-container .dev-wrapper ul li>label:hover {
+				color: #424242;
+			}
+			.dev-container .dev-wrapper .dev-h2 {
+				margin-top: 0px;
+			}
+			.dev-container .dev-wrapper ul li.clear-margin {
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<form action="" method="post">-->
+		<div class="dev-title dev-h3">企业开发者认证</div>
+		<ul>
+			<li>
+				<label>开发者ID</label>
+				<span class="inputname email" id="devId" name="devId"></span>
+			</li>
+			<li class="clear-margin">
+				<label for="enterprise">企业名称</label>
+				<span class="inputname" name="enterprise" id="enterprise"></span>
+			</li>
+			<li class="clear-margin">
+				<label for="firm">营业执照注册号</label>
+				<span class="inputname" name="firm" id="firm"></span>
+			</li>
+			<li class="photoli clear-margin">
+				<label class="phototitle">营业执照扫描件</label>
+				<div class="photomain">
+					<img id="business_licence" src="../../img/developer/deletephoto.png">
+				</div>
+			</li>
+			<li>
+				<label for="website">网站&nbsp;&nbsp;<span>(选填)</span></label>
+				<input type="text" class="inputname" name="website" id="website" placeholder="请输入您公司的网站主页" tabindex="1" />
+			</li>
+		</ul>
+		<div class="dev-title dev-h3">品牌信息&nbsp;&nbsp;<span>(品牌信息将展示在应用商店分类上，填写品牌信息能够增加应用曝光。)</span></div>
+		<ul>
+			<li>
+				<label for="brandname">品牌名称<span>(选填)</span></label>
+				<input type="text" class="inputname" maxlength="50" name="brandname" id="brandname" placeholder="请输入品牌名称" tabindex="2" />
+			</li>
+			<li class="photoli3">
+				<label class="phototitle">品牌logo<span>(选填)</span></label>
+				<div class="photomain">
+					<div class="photo2 pb-border">
+						<img id="brandlogo2" src="../../img/developer/deletephoto.png">
+						<canvas id="brandlogo_pc" width="172" height="172">您的浏览器不支持canvas！</canvas>
+					</div>
+					<form id="uploadlogo" action="" method="post" enctype="multipart/form-data">
+						<div class="uploadfile">
+							<input name="brandlogo" type="file" class="file" value="上传品牌logo" accept="image/*" />
+							<a id="brandlogo" class="bbtn btn-upload">上传品牌logo</a>
+						</div>
+					</form>
+					<div class="photo-desc">
+						请提供品牌logo，图片格式为jpg或png，大小不超过 1 M 。
+					</div>
+				</div>
+			</li>
+			<li class="textareali">
+				<label class="phototitle">品牌简介<span>(选填)</span></label>
+				<div class="photomain">
+					<textarea id='brandintro' maxlength="500" placeholder="请用500字以内的文字描述您的品牌" tabindex="3"></textarea>
+				</div>
+			</li>
+		</ul>
+		<div class="dev-title dev-h3">联系方式</div>
+		<ul>
+			<li>
+				<label for="username">姓名</label>
+				<input type="text" maxlength="200" class="inputname" name="username" id="username" placeholder="请输入您的真实姓名" tabindex="4" />
+			</li>
+			<li>
+				<label for="tel">手机号码</label>
+				<input type="tel" maxlength="28" class="inputname" name="tel" id="tel" placeholder="请输入手机号码" tabindex="5" />
+				<div class="tipdiv2">如境外联系电话请加前缀,如香港:+8526</div>
+			</li>
+			<li>
+				<label for="fixedtel">座机号码<span>(选填)</span></label>
+				<div class="selectinput">
+					<input type="tel" maxlength="10" class="fixedtel" name="areacode " id="areacode" placeholder="所在区号" tabindex="6" />
+					<input type="tel" maxlength="25" class="inputnum" name="fixedtel" id="fixedtel" placeholder="请输入座机号码" tabindex="7" />
+				</div>
+			</li>
+			<li>
+				<label for="emailaddress">邮箱地址</label>
+				<input type="email" maxlength="50" class="inputname" name="emailaddress" id="emailaddress" placeholder="请输入常用邮箱" tabindex="8" />
+			</li>
+			<li>
+				<label for="address">联系地址</label>
+				<input type="text" maxlength="500" class="inputname" name="address" id="address" placeholder="请输入您现在所居住的常用地址" tabindex="9" />
+			</li>
+		</ul>
+		<div class="dev-center fixwh pb-center">
+			<a name="business_cancle" class="bbtn bbtn-check mr1" tabindex="23">取消</a>
+			<a name="business_submit" class="bbtn bbtn-check" tabindex="24">提交修改</a>
+		</div>
+		<!--</form>-->
+	</body>
+	<script type="text/javascript" src="../../js/account_info/business_update.js"></script>
+	<script>
+		$(function() {
+			var business_update = new PT.Account.BUpdate("#render");
+		});
+	</script>
+
+</html>

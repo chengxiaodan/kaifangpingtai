@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/document/docApi.css" />
+		<title>葡萄开发者平台-文档</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="docApi">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>文档&nbsp;&gt;&nbsp;</li>
+						<li id="tabtitle2">应用商店</li>
+					</ul>
+					<div class="search-input">
+						<input id="search" type="search" placeholder="请输入搜索内容" />
+					</div>
+				</div>
+				<div class="top">
+					<div class="title-01">
+						<label id="tabtitle" class="header-01">应用商店</label>
+						<div class="tabbox">
+							<div id="appstore_list" class="tabpart">应用商店</div>
+							<!--<div id="bfstore_list" class="tabpart">
+									美化商店
+								</div>-->
+							<div id="service_list" class="tabpart">开发者服务</div>
+						</div>
+					</div>
+				</div>
+				<div class="left-wrapper">
+					<div class="centerLeft">
+						<section id="appstore">
+							<div class="dropdown">
+							</div>
+							<!--</aside>-->
+						</section>
+						<!--<section id="bfstore">
+							<div class="dropdown">
+							</div>
+						</section>-->
+						<section id="service">
+							<div class="dropdown">
+							</div>
+						</section>
+					</div>
+					<div class="centerRight">
+						<div class="title">
+							企业开发者注册
+						</div>
+						<article class="article-wrapper">
+							<ol class="catalogue" id="catalogue">
+							</ol>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/document/docApi.js"></script>
+	<script src="../../js/document/utilSearch.js"></script>
+	<script>
+		$(function() {
+			new PT.Document.docApi("#docApi");
+		})
+	</script>
+
+</html>

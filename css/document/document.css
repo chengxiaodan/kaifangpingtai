@@ -1,0 +1,105 @@
+.dev-container .doc-wrapper {
+	background: #ffffff;
+	border: 1px solid #ededed;
+	border-radius: 4px;
+	width: 1200px;
+	height: 990px;
+	margin: 0 auto;
+}
+
+.dev-container .doc-wrapper .doc-title {
+	font-size: 18px;
+	color: #424242;
+	width: inherit;
+	text-align: left;
+	text-align: -moz-left;
+	text-align: -webkit-left;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.dev-container .doc-wrapper .doc-h2 {
+	height: 80px;
+	line-height: 80px;
+	padding-left: 70px;
+}
+
+.doc-wrapper .doc-main {
+	width: 100%;
+	height: auto;
+	/*padding-left: 280px;*/
+	padding-left: 405px;
+	padding-top: 60px;
+}
+
+.doc-wrapper .doc-main ul li {
+	float: left;
+	width: 142px;
+	margin-right: 100px;
+}
+
+.doc-wrapper .doc-main ul li .items {
+	width: 100%;
+	height: auto;
+}
+
+.doc-main ul li .items figure {
+	width: 142px;
+	height: 178px;
+	font-size: 20px;
+	color: #4a4a4a;
+	text-align: center;
+	text-align: -webkit-center;
+	text-align: -moz-center;
+}
+
+.doc-main ul li .items figure img {
+	width: 128px;
+	height: 128px;
+}
+
+.doc-main ul li .items figcaption {
+	margin-top: 20px;
+}
+
+.app-store ul {
+	background: url(../../img/document/img_develop.9.png) no-repeat top -1px center;
+}
+
+.bf-store ul {
+	background: url(../../img/document/img_develop.9.png) no-repeat top -1px center;
+}
+
+.service ul {
+	background: url(../../img/document/img_develop.9.png) no-repeat top -1px center;
+	
+}
+.doc-main ul li .items ul {
+	width: 142px;
+	margin-top: 24px;
+	text-align: center;
+	text-align: -webkit-center;
+	text-align: -moz-center;
+	background-size: 102% 102%;
+	-webkit-background-size: 102% 102%;
+}
+.doc-main ul li .items ul li {
+	width: 118px;
+	height: 36px;
+	margin: 12px 12px 0px 12px;
+}
+
+.doc-main ul li .items ul li a {
+	display: block;
+	width: 118px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 16px;
+	color: #4a4a4a;
+}
+.doc-main ul li .items ul li a:hover {
+	background: #f5f3fb;
+	color: #8C65D7;
+}
+.doc-main ul li .items ul li:first-child {
+	margin-top: 18px;
+}

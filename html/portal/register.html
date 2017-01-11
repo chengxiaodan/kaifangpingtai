@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link charset="utf-8" rel="stylesheet" href="../../css/common.css" />
+		<link charset="utf-8" rel="stylesheet" href="../../css/register.css" />
+		<link charset="utf-8" rel="stylesheet" href="../../js/plugin/jqueryValidate/tip-yellowsimple/tip-redsimple.css" />
+		<title>葡萄开发者平台－注册</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li>
+						<a href="../login.html">登录</a>
+					</li>
+					<li>
+						<a href="register.html">注册</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!--注册加验证-->
+		<div class="middle-box wh" id="register">
+			<h3>注册葡萄开发者账号</h3>
+			<form name="form" action="" method="post">
+				<input type="email" name="username" class="a form-control" placeholder="请输入常用邮箱地址" />
+				<input type="password" name="password" class="a form-control" placeholder="请设置密码"/>
+				<input type="password" name="password2" class="a form-control" placeholder="请确认密码"/>
+				<div class="checkcode">
+					<input type="text" name="codetext" class="a form-code" placeholder="请输入图形验证码" maxlength="4">
+					<span class="code_img"><img id="code" width="84" height="48" src="https://login.sina.com.cn/cgi/pin.php?r=20302513&amp;s=0&amp;p=gz-bbb13d3fe2425e7e7d30fb3169088a70be79"></span>
+					<span id="flash" class="flash"></span>
+				</div>
+				<div class="read" id="read">
+					<div class="checkbox">
+						<input type="checkbox" name="checkbox" id="agreement"/>
+						<label for="agreement" class="btn-check"></label>
+					</div>
+					<span>我已阅读并同意</span>
+					<a href="user-agreement.html">葡萄科技用户协议</a>
+				</div>
+				<a name="registerbtn" class="bbtn btn-sign">注册</a>
+			</form>
+		</div>
+		<!--发送验证邮件-->
+		<div class="middle-box center" id="sendmail">
+			<div class="re-img">
+				<div class="re-one"></div>
+				<div class="re-two"></div>
+				<div class="re-three"></div>
+			</div>
+			<div class="desc1">验证邮件已经发送到您的邮箱:&nbsp;&nbsp;<span>jiangchenchen020@163.com</span></div>
+			<div class="desc2">请您在48小时内<a id="login_email" target="_blank" >登录邮箱</a>完成验证</div>
+			<a href="../ptdev/index.html" class="bbtn btn-sign">返回首页&nbsp;&nbsp;(<span class="timer">5</span>)</a>
+			<div class="desc3">没收到邮件怎么办？</div>
+			<div class="desc4 pubttom"><a href="#">重新发送</a>验证邮件</div>
+			<div class="desc4">依然收不到邮件，<a href="../document/docApi.html">查看帮助</a></div>
+		</div>
+		<section id="footer"></section>
+	</body>
+	<script type="text/javascript" src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../js/plugin/jqueryValidate/jquery.poshytip.js" ></script>
+	<script type="text/javascript" src="../../js/plugin/ptdev_util.js" ></script>
+	<script type="text/javascript" src="../../js/portal/register.js" ></script>
+	<script>
+		$(function(){
+			var register = new PT.register("#register");
+		});
+	</script>
+</html>

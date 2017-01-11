@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/register.css" />
+		<link rel="stylesheet" href="../../js/plugin/jqueryValidate/tip-yellowsimple/tip-redsimple.css" />
+		<title>葡萄开发者平台－找回密码</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li>
+						<a href="../login.html">登录</a>
+					</li>
+					<li>
+						<a href="register.html">注册</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!--
+        	作者：chengxiaodan1314@163.com
+        	时间：2016-10-23
+        	描述：找回密码
+        -->
+        <div class="middle-box wh" id="find_pw">
+			<h3>找回密码</h3>
+			<form name="" action="" method="post">
+				<input type="email" name="username" class="a form-control" placeholder="请输入邮箱地址" />
+	       		<div class="checkcode">
+						<input type="text" name="codetext" class="a form-code" placeholder="请输入图形验证码" maxlength="4">
+						<span class="code_img"><img id="code" width="84" height="48" src="https://login.sina.com.cn/cgi/pin.php?r=20302513&amp;s=0&amp;p=gz-bbb13d3fe2425e7e7d30fb3169088a70be79"></span>
+						<span id="flash" class="flash"></span>
+				</div>
+				<input type="button" name="next" class="bbtn btn-sign" value="下一步">
+			</form>
+        </div>
+		<!--
+        	作者：chengxiaodan1314@163.com
+        	时间：2016-10-23
+        	描述：邮件发送
+        -->
+        <div class="middle-box center" id="mail_pw">
+        		<h3>找回密码</h3>
+			<div class="desc1">验证邮件已经发送到您的邮箱:&nbsp;&nbsp;<span id="emailstr"></span></div>
+			<div class="desc2"><a  id="login_email" target="_blank">登录邮箱</a>&nbsp;&nbsp;重置密码</div>
+        </div>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/jqueryValidate/jquery.poshytip.js" ></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/portal/findpw.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var signin = new PT.Forgetpw('#find_pw');
+		});
+	</script>
+
+</html>

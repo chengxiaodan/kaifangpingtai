@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../js/plugin/confirmBox/showBo.css" />
+		<link rel="stylesheet" href="../../css/developer/detail.css" />
+		<title>管理中心-应用商店</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="detail">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>管理中心&nbsp;&gt;&nbsp;</li>
+						<li>应用商店&nbsp;&gt;&nbsp;</li>
+						<li>应用详情</li>
+					</ul>
+				</div>
+				<div class="dev-wrapper">
+					<div class="items dev-item1 pb-flex">
+						<figure class="pb-itemsflex pb-order1">
+							<div class="icon pb-center">
+								<img id="applogo"  width="64" height="64" />
+							</div>
+							<div class="right-part">
+								<figcaption id="apptitle"></figcaption>
+								<div id="checkState" class="check-state"></div>
+								<div id="reason" class="reason">
+									<div id="reason-title" class="reason-title pb-center">未通过原因</div>
+									<div id="reason-body" class="reason-body">请提应用信息不完整，应用海报重复，应用图标设计不能突出APP设计元素，应用描述不能完整概括应用功能、特点。</div>
+								</div>
+							</div>
+						</figure>
+						<div class="appinfo pb-itemsflex pb-order2">
+							<div class="keyvalue">
+								<span class="key1">App ID</span>
+								<span class="value">:&nbsp;<span id="appId"></span></span>
+							</div>
+							<div class="keyvalue">
+								<span class="key1">App ID Key</span>
+								<span class="value">:&nbsp;<span id="appIdKey"></span></span>
+							</div>
+						</div>
+						<div class="appinfo pb-itemsflex pb-order3">
+							<div class="keyvalue">
+								<span class="key2">包名</span>
+								<span class="value">:&nbsp;<span id="packgename"></span></span>
+							</div>
+							<div class="keyvalue">
+								<span class="key2">版本号</span>
+								<span class="value">:&nbsp;<span id="version"></span></span>
+							</div>
+						</div>
+					</div>
+					<div class="items dev-item2">
+						<div class="pb-flex">
+							<div class="pb-itemsflex pb-order1">
+								<a id="edit" class="mbtn edit normal">编辑</a>
+							</div>
+							<div class="pb-itemsflex pb-order2">
+								<a id="update" class="mbtn update normal">更新</a>
+							</div>
+							<div class="pb-itemsflex pb-order3">
+								<a id="submit" class="mbtn submit normal">提交</a>
+							</div>
+							<div class="pb-itemsflex pb-order4">
+								<a id="downline" class="mbtn downline normal">下架</a>
+							</div>
+							<div class="pb-itemsflex pb-order5">
+								<a id="delete" class="mbtn delete normal">删除</a>
+							</div>
+						</div>
+					</div>
+					<div class="dev-item3">
+						<div class="items dev-item3-1">
+							<div class="title pb-center">
+								<span>应用信息</span>
+								<a id="appinfoBtn" class="pb-cursor">查看更多&nbsp;&gt;</a>
+							</div>
+							<div class="appinfo">
+								<span class="key">应用分类</span>
+								<span id="appType" class="value"></span>
+							</div>
+							<div class="appinfo">
+								<span class="key">适应年龄段</span>
+								<span id="agePart" class="value"></span>
+							</div>
+							<div class="appinfo">
+								<span class="key">应用简介</span>
+								<span id="appintro" class="value"></span>
+							</div>
+						</div>
+						<div class="items dev-item3-2">
+							<div class="title pb-center">
+								<span>应用数据</span>
+								<a id="analysisBtn" class="pb-cursor">查看详细&nbsp;&gt;</a>
+							</div>
+							<div class="data-anlasys pb-flex">
+								<div class="pb-itemsflex pb-order1">
+									<div class="data-info">
+										<label>累计下载次数</label><br />
+										<span id="downloadNum"></span>
+									</div>
+									<div class="data-info">
+										<label>昨日下载人数</label><br />
+										<span id="ytpersonNum"></span>
+									</div>
+								</div>
+								<div class="pb-itemsflex pb-order2">
+									<div class="data-info">
+										<label>累计用户</label><br />
+										<span id="userCount"></span>
+									</div>
+									<div class="data-info">
+										<label>昨日下载次数</label><br />
+										<span id="ytDownNum"></span>
+									</div>
+								</div>
+								<div class="pb-itemsflex pb-order2">
+									<div class="data-info">
+										<label>昨日新增用户</label><br />
+										<span id="ytAddUser"></span>
+									</div>
+									<div class="data-info">
+										<label>昨日启动次数</label><br />
+										<span id="ytOpenNum"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="items dev-item4">
+						<table class="table">
+							<caption>历史版本</caption>
+							<thead>
+								<tr>
+									<th>版本号</th>
+									<th>提交时间</th>
+									<th>更新时间</th>
+									<th>下架时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody id="detailTable">
+							</tbody>
+						</table>
+					</div>
+				</div>
+		</section>
+		<section id="downline-box">
+			<div class="overlay"></div>
+			<div class="modal">
+				<div class="downline-box w1">
+					<div class="title pb-center">
+						申请下架
+						<div class="close pb-cursor"></div>
+					</div>
+					<div class="warning">评审通过后立即发布</div>
+					<textarea id="downline_reason" name="downline_reason" rows="" cols="" placeholder="请填写下架原因"></textarea>
+					<a id="submitbtn" class="bbtn btn-sign bbtn-disabled">提交申请</a>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/plugin/confirmBox/Showbo.js"></script>
+	<script src="../../js/manage/detail.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var detail = new PT.Manage.detail();
+		});
+	</script>
+
+</html>

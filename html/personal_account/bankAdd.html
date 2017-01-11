@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#bankAccount>ul>li {
+				margin-top: 40px;
+			}
+			#bankAccount>ul>li .inputname {
+				width: 340px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>
+				<label for="apptype">账户名称</label>
+				<input type="text" maxlength="50" class="inputname" name="apptype" id="apptype" placeholder="请输入账户名" tabindex="1" />
+			</li>
+			<li class="selectli">
+				<label for="credentials">开户银行</label>
+				<div class="selectinput">
+					<span>
+						<input id="bank" type="checkbox" />
+						<label id="banktext" for="bank" class="header-01 hight2">请选择开户银行</label>
+						<ul id="bank_ul" class="tabbox hight2">
+							<li class="tabpart list_active">
+								请选择开户银行
+							</li>
+							<li class="tabpart">
+								中国建设银行
+							</li>
+							<li class="tabpart">
+								中国招商银行
+							</li>
+						</ul>
+					</span>
+					<span>
+						<input id="mpy" type="checkbox" />
+						<label id="mpytext" for="mpy" class="header-01 hight2">请选择省/直辖市</label>
+						<ul id="mpy_ul" class="tabbox hight2">
+							<li class="tabpart list_active">
+								请选择省/直辖市
+							</li>
+							<li class="tabpart">
+								河南省
+							</li>
+							<li class="tabpart">
+								上海市
+							</li>
+						</ul>
+					</span>
+					<span>
+						<input id="district" type="checkbox" />
+						<label id="district_text" for="district" class="header-01 hight2">请选择市/地区</label>
+						<ul id="district_ul" class="tabbox hight2">
+							<li class="tabpart list_active">
+								请选择市/地区
+							</li>
+							<li class="tabpart">
+								上海市
+							</li>
+							<li class="tabpart">
+								闵行区
+							</li>
+						</ul>
+					</span>
+					<br />
+					<input type="text" maxlength="50" class="inputname branch_text" name="branch_text" id="branch_text" placeholder="请输入分行/支行" tabindex="2" />
+				</div>
+			</li>
+			<li>
+				<label for="bank_card">银行账号</label>
+				<input type="text" maxlength="23" class="inputname" name="bank_card" id="bank_card" placeholder="请输入银行帐号" tabindex="3" />
+			</li>
+		</ul>
+		<div class="dev-center">
+			<a name="bank_add" class="bbtn btn-sign"  tabindex="3">保存</a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/account_info/bankdata.js" ></script>
+	<script>
+		$(function() {
+			var bankUpdate = new PT.Account.bankUpdate('#bankAccount');//银行账户信息
+//			 bankUpdate.add();
+		})
+	</script>
+</html>

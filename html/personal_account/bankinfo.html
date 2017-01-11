@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#bankAccount>ul>li .selectinput {
+				display: block;
+			}
+			.dev-container .dev-wrapper ul li div.inputname{
+				padding-top: 11px;
+				line-height: 25px;
+				width: auto;
+			}
+			.dev-container .dev-wrapper ul li:last-child {
+				margin-top: 30px;
+			}
+			.dev-container .dev-wrapper .selectli {
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>
+				<label for="apptype">账户名称</label>
+				<span class="inputname" name="apptype" id="apptype"></span>
+			</li>
+			<li class="selectli">
+				<label for="credentials">开户银行</label>
+				<div class="inputname">
+					<span id="banktext"></span><br />
+					<span id="branch_text"></span>
+				</div>
+			</li>
+			<li>
+				<label for="bank_card">银行账号</label>
+				<span class="inputname" name="bank_card" id="bank_card" ></span>
+			</li>
+		</ul>
+		<div class="dev-center">
+			<a name="bank_update" class="bbtn btn-sign">修改信息</a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/account_info/bankdata.js" ></script>
+	<script>
+		$(function() {
+			var bankUpdate = new PT.Account.bankUpdate('#bankAccount');//银行账户信息
+			 bankUpdate.detail();
+		})
+	</script>
+</html>

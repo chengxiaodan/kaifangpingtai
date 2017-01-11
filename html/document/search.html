@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/document/search.css" />
+		<link rel="stylesheet" href="../../css/perfectPager.css" />
+		<title>葡萄开发者平台－文档</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<section id="doc">
+			<div class="dev-container">
+				<div class="dev-nav">
+					<ul>
+						<li>文档&nbsp;&gt;&nbsp;</li>
+						<li>搜索结果</li>
+					</ul>
+					<div class="search-input">
+						<input id="search" type="search"  placeholder="请输入搜索内容" />
+					</div>
+				</div>
+				<div id="doc-wrapper" class="doc-wrapper">
+					<div id="keyword" class="doc-title doc-h2"></div>
+					<div id="doc-main" class="doc-main">
+					</div>
+					<div id="search-page" class="dev-page pb-center">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/page/jquery.perfectPager.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/document/utilSearch.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			new PT.Document.search();
+		});
+	</script>
+
+</html>

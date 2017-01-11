@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/register.css" />
+		<link rel="stylesheet" href="../../js/plugin/jqueryValidate/tip-yellowsimple/tip-redsimple.css" />
+		<title>葡萄开发者平台－找回密码</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li>
+						<a href="../login.html">登录</a>
+					</li>
+					<li>
+						<a href="register.html">注册</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+        <!--
+        	作者：chengxiaodan1314@163.com
+        	时间：2016-10-24
+        	描述：重置密码
+        -->
+       <div class="middle-box center" id="replace_pw">
+         	<h3>为 <span id="emailstr">chengxiaodan@putao.com</span>  设置新密码</h3>
+			<form action="" method="post">
+				<input type="password" name="password" class="a form-control" placeholder="设置新密码"/>
+				<input type="password" name="password2" class="a form-control" placeholder="再次输入新密码"/>
+				<input type="button" name="confire" class="bbtn btn-sign" value="确认新密码"/>
+			</form>
+        </div>
+        <!--
+        	作者：chengxiaodan1314@163.com
+        	时间：2016-10-24
+        	描述：重置密码成功
+        -->
+        <div class="middle-box center" id="success_pw">
+			<div class="repw-img"></div>
+			<p class="lose-p">密码重置成功</p>
+			<a href="../ptdev/index.html" class="bbtn btn-sign">返回登录&nbsp;&nbsp;(<span class="timer">5</span>)</a>
+        </div>
+        <!--链接失效重新发送-->
+		<div class="middle-box center" id="lose_effect">
+			<div class="lose-img"></div>
+			<p class="lose-p">激活链接已失效</p>
+			<a href="#" class="re-sendmail">重新发送验证邮件</a>
+			<a href="../ptdev/index.html" class="bbtn btn-sign">返回首页&nbsp;&nbsp;(<span class="timer">5</span>)</a>
+		</div>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/jqueryValidate/jquery.poshytip.js" ></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/portal/find_result.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var resetpw = new PT.FindResult('#replace_pw');
+		});
+	</script>
+
+</html>

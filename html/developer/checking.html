@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/developer/middlebox.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<div class="middle-box center" id="success_pw">
+			<div class="repw-img c1"></div>
+			<p class="lose-p">您的开发者身份证在审核中，请耐心等待......</p>
+			<a href="../ptdev/index.html" class="bbtn btn-sign">返回首页&nbsp;&nbsp;(<span id="timer" class="timer">5</span>)</a>
+		</div>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var t = null;
+			var i = 5;
+			timedCount();
+			function timedCount() {
+				if(typeof t != undefined) clearTimeout(t);
+				$('#timer').text(i);
+				i--;
+				t = setTimeout(function() {
+					timedCount();
+				}, 1000);
+				if(i == 0){
+					clearTimeout(t);
+					window.location.href ="../ptdev/index.html";
+					$('#timer').val(5);
+				}
+			}
+		});
+	</script>
+	</body>
+
+</html>

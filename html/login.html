@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../img/putao.png" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/register.css" />
+		<link rel="stylesheet" href="../js/plugin/jqueryValidate/tip-yellowsimple/tip-redsimple.css" />
+		<title>葡萄开发者平台－登录</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li>
+						<a href="login.html">登录</a>
+					</li>
+					<li>
+						<a href="portal/register.html">注册</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="middle-box wh" id="signin">
+			<h3>登录葡萄开发者账号</h3>
+			<form name="" action="" method="post">
+				<input type="email" name="username" class="a form-control" placeholder="请输入常用邮箱地址" />
+				<div class="pwdiv">
+					<input type="password" name="password" class="a form-control" placeholder="请设置密码" />
+					<!--<div class="hideandshow" name="hideandshow"></div>-->
+				</div>
+				<div class="checkcode">
+					<input type="text" name="codetext" class="a form-code" placeholder="请输入图形验证码" maxlength="4">
+					<span class="code_img"><img id="code" width="84" height="48" src="https://login.sina.com.cn/cgi/pin.php?r=20302513&amp;s=0&amp;p=gz-bbb13d3fe2425e7e7d30fb3169088a70be79"></span>
+					<span id="flash" class="flash"></span>
+				</div>
+				<div class="read" id="read">
+					<div class="checkbox">
+						<input type="checkbox" name="checkbox" id="agreement" />
+						<label for="agreement" class="btn-check"></label>
+					</div>
+					<span>我已阅读并同意</span>
+					<a href="portal/user-agreement.html">葡萄科技用户协议</a>
+				</div>
+				<!--<a name="login" class="bbtn btn-sign" href="index1.html">登录</a>-->
+				<input name="login" type="button" class="bbtn btn-sign" value="登录" />
+			</form>
+			<div class="reandps-part">
+				<div>
+					<a href="portal/register.html" name="register-user" class="register-user">注册新账号</a>
+					<a href="portal/findpw.html" name="forget-password" class="forget-password">忘记密码</a>
+				</div>
+			</div>
+		</div>
+		<section id="footer">
+
+		</section>
+	</body>
+	<script src="../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../js/plugin/ptdev_util.js"></script>
+	<script type="text/javascript" src="../js/plugin/jqueryValidate/jquery.poshytip.js"></script>
+	<script src="../js/portal/login.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var signin = new PT.Signin('#signin');
+			$.get("common/footer.html", function(data) {
+				$('#footer').html(data);
+			});
+		});
+	</script>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/developer/devinfo.css" />
+		<link rel="stylesheet" href="../../js/plugin/jqueryValidate/tip-yellowsimple/tip-redsimple.css" />
+		<style type="text/css">
+			.dev-container .dev-wrapper .photomain {
+				margin-left: 0px;
+			}
+		</style>
+		<title>企业开发者登记</title>
+	</head>
+
+	<body>
+		<section id="header"></section>
+		<div class="dev-container">
+			<div class="dev-wrapper">
+				<section id="business_add">
+					<!--<form action="" method="post">-->
+					<div class="dev-title dev-h3">企业开发者认证</div>
+					<ul>
+						<li>
+							<label>开发者账号</label>
+							<span class="inputname email" maxlength="300" id="devId" name="devId">S6ED20160901</span>
+						</li>
+						<li>
+							<label for="enterprise">企业名称</label>
+							<input type="text" maxlength="300" class="inputname" name="enterprise" id="enterprise" placeholder="请输入营业执照上的企业名称" tabindex="1" />
+						</li>
+						<li>
+							<label for="firm">营业执照注册号</label>
+							<input type="text" maxlength="300" class="inputname" name="firm" id="firm" placeholder="请输入企业营业执照注册号" tabindex="2" />
+						</li>
+						<li class="photoli">
+							<label class="phototitle">营业执照扫描件</label>
+							<div class="photomain">
+								<div class="photo2 pb-border">
+									<img id="licence2" src="../../img/developer/deletephoto.png">
+									<canvas id="licence_pc" width="172" height="172">您的浏览器不支持canvas！</canvas>
+								</div>
+								<form id="upload_licence" action="" method="post" enctype="multipart/form-data">
+									<div class="uploadfile">
+										<input name="licence" type="file" class="file" value="上传营业执照扫描件" accept="image/*" />
+										<a id="business_licence" class="bbtn btn-upload">上传营业执照扫描件</a>
+									</div>
+									<div class="photo-desc">
+										请提供营业执照完整信息，图片格式为 jpg或 png ，大小不超过5M。 查看
+										<a class="handimage">参考示例</a>。
+										<div class="suspend-box business_licence pb-center">
+											<img src="../../img/developer/business_licence.png" />
+										</div>
+									</div>
+								</form>
+							</div>
+							<!--<div class="photomain">
+								<img  src="../../img/developer/deletephoto.png">
+							</div>-->
+						</li>
+						<li>
+							<label for="website">网站&nbsp;&nbsp;<span>(选填)</span></label>
+							<input type="text" class="inputname" name="website" id="website" placeholder="请输入您公司的网站主页" tabindex="3" />
+						</li>
+					</ul>
+					<div class="dev-title dev-h3">品牌信息&nbsp;&nbsp;<span>(品牌信息将展示在应用商店分类上，填写品牌信息能够增加应用曝光。)</span></div>
+					<ul>
+						<li>
+							<label for="brandname">品牌名称<span>(选填)</span></label>
+							<input type="text" class="inputname" name="brandname" id="brandname" placeholder="请输入品牌名称" tabindex="4" />
+						</li>
+						<li class="photoli3">
+							<label class="phototitle">品牌logo<span>(选填)</span></label>
+							<div class="photomain">
+							<div class="photo2 pb-border">
+									<img id="brandlogo2" src="../../img/developer/deletephoto.png">
+									<canvas id="brandlogo_pc" width="172" height="172">您的浏览器不支持canvas！</canvas>
+								</div>
+								<form id="uploadlogo" action="" method="post" enctype="multipart/form-data">
+									<div class="uploadfile">
+										<input name="brandlogo"  type="file" class="file" value="上传品牌logo" accept="image/*" />
+										<a id="brandlogo" class="bbtn btn-upload">上传品牌logo</a>
+									</div>
+									<div class="photo-desc">
+										请提供品牌logo，图片格式为jpg或png，大小不超过 1 M 。
+									</div>
+								</form>
+							</div>
+							<!--<div class="photomain">
+								<img  src="../../img/developer/deletephoto.png">
+							</div>-->
+						</li>
+						<li class="textareali">
+							<label class="phototitle">品牌简介<span>(选填)</span></label>
+							<div class="photomain">
+								<textarea id='brandintro' maxlength="500" placeholder="请用500字以内的文字描述您的品牌" tabindex="5"></textarea>
+							</div>
+						</li>
+					</ul>
+					<div class="dev-title dev-h3">联系方式</div>
+					<ul>
+						<li>
+							<label for="username">姓名</label>
+							<input type="text" maxlength="200" class="inputname" name="username" id="username" placeholder="请输入您的真实姓名" tabindex="6" />
+						</li>
+						<li>
+							<label for="tel">手机号码</label>
+							<input type="tel" maxlength="28" class="inputname" name="tel" id="tel" placeholder="请输入手机号码" tabindex="7" />
+							<div class="tipdiv2">如境外联系电话请加前缀,如香港:+8526</div>
+						</li>
+						<li>
+							<label for="fixedtel">座机号码<span>(选填)</span></label>
+							<div class="selectinput">
+								<input type="tel" maxlength="10" class="fixedtel" name="areacode " id="areacode" placeholder="所在区号" tabindex="8" />
+								<input type="tel" maxlength="25" class="inputnum" name="fixedtel" id="fixedtel" placeholder="请输入座机号码" tabindex="9" />
+							</div>
+						</li>
+						<li>
+							<label for="emailaddress">邮箱地址</label>
+							<input type="email" class="inputname" name="emailaddress" id="emailaddress" placeholder="请输入常用邮箱" tabindex="10" />
+						</li>
+						<li>
+							<label for="address">联系地址</label>
+							<input type="text" maxlength="500" class="inputname" name="address" id="address" placeholder="请输入您现在所居住的常用地址" tabindex="11" />
+						</li>
+					</ul>
+					<div class="dev-center">
+						<div class="read" id="read">
+							<div class="checkbox">
+								<input type="checkbox" name="checkbox" id="agreement" />
+								<label for="agreement" class="btn-check"></label>
+							</div>
+							<span>我已阅读并同意</span>
+							<a href="../portal/user-agreement.html">葡萄科技用户协议</a>
+						</div>
+						<!--<input type="submit" name="submit" class="bbtn btn-sign" value="同意并提交开发者信息" />-->
+						<a name="submit" class="bbtn btn-sign">同意并提交开发者信息</a>
+					</div>
+					<!--</form>-->
+				</section>
+			</div>
+		</div>
+		<section id="footer"></section>
+	</body>
+	<script src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script src="../../js/plugin/ptdev_util.js"></script>
+	<script src="../../js/plugin/jqueryValidate/jquery.poshytip.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../../js/developer/business_add.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var business = new PT.Business.Add("#business_add");
+		});
+	</script>
+</html>

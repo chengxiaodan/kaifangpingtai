@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Pragma" content="no-caches" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link type="image/x-icon" rel="shortcut icon" href="../../img/putao.png" />
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/register.css" />
+		<title>葡萄开发者平台失败</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li>
+						<a href="../login.html">登录</a>
+					</li>
+					<li>
+						<a href="register.html">注册</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!--链接失效重新发送-->
+		<div class="middle-box center2" id="lose_effect">
+			<div class="lose-img"></div>
+			<p class="lose-p">激活链接已失效</p>
+			<a href="#" class="re-sendmail">重新发送验证邮件</a>
+			<a href="../ptdev/index.html" class="bbtn btn-sign">返回首页&nbsp;&nbsp;(<span class="timer">5</span>)</a>
+		</div>
+		<!--激活成功-->
+		<div class="middle-box center" id="success">
+			<div class="success-img"></div>
+			<p class="lose-p">激活成功</p>
+			<a href="../ptdev/index.html" class="bbtn btn-sign">返回首页&nbsp;&nbsp;(<span class="timer">5</span>)</a>
+		</div>
+		<section id="footer"></section>
+	</body>
+	<script type="text/javascript" src="../../js/plugin/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../../js/plugin/ptdev_util.js" ></script>
+	<script type="text/javascript" src="../../js/portal/rg_result.js" ></script>
+	<script>
+		$(function(){
+			new PT.RgResult();
+		});
+	</script>
+</html>

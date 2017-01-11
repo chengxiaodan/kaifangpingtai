@@ -1,0 +1,101 @@
+.middle-box {
+	height: 600px;
+	margin: 0 auto;
+	font-family: "微软雅黑";
+}
+
+.center {
+	text-align: center;
+	text-align: -moz-center;
+	text-align: -webkit-center;
+	width: auto;
+}
+
+.middle-box .repw-img {
+	width: 100px;
+	height: 100px;
+	margin-top: 76px;
+	margin-bottom: 40px;
+}
+
+.c1 {
+	background: url(../../img/developer/checking.png) no-repeat center center;
+}
+
+.c2 {
+	background: url(../../img/manage/error.png) no-repeat center center;
+}
+.c3 {
+	background: url(../../img/account_info/register.png) no-repeat center center;
+}
+.c4 {
+	background: url(../../img/delete_applogo.png) no-repeat center center;
+}
+
+.c5 {
+	background: url(../../img/error.png) no-repeat center center;
+}
+.middle-box .lose-p {
+	font-size: 14px;
+	color: #424242;
+	letter-spacing: 1.04px;
+	margin-bottom: 40px;
+}
+
+.bbtn {
+	display: block;
+	font-size: 18px;
+	text-decoration: none;
+	font-family: "微软雅黑";
+	color: #fdf9f9;
+	letter-spacing: 1.64px;
+	text-align: center;
+	text-align: -moz-center;
+	text-align: -webkit-center;
+	cursor: pointer;
+	cursor: -ms-pointer;
+	background-color: #8C61DA;
+	border-radius: 4px;
+}
+
+.bbtn:hover {
+	background-color: #7653b8;
+}
+
+.bbtn:active {
+	background-color: #6947a8;
+}
+.btn-sign {
+	width: 340px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+	padding: 0px;
+	border: 0px;
+}
+.btn-refresh {
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0px auto;
+	padding: 0px;
+	border: 0px;
+	font-size: 12px;
+}
+.middle-box .error {
+	font-size: 12px;
+	letter-spacing: 0.89px;
+	width: 196px;
+	color: #BDBDBD;
+	height: 21px;
+	padding-left: 27px;
+	margin-top: 40px;
+	margin: 40px 0px;
+	line-height: 21px;
+	background: url(../../img/manage/errorwarn.png) no-repeat center left;
+}
+
+.middle-box .font {
+	font-size: 18px;
+	color: #424242;
+}

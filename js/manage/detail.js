@@ -46,7 +46,7 @@ PT.Manage.detail.prototype = {
 			appKey: "6f73c74712dc61fcc8530ef8ee",
 			packageName: '20160710BETA0', //包名
 			version: '12.5.1', //版本号
-			checkState: '已下架', //审核状态
+			checkState: '审核未通过', //审核状态
 			appType: "游戏", //应用类型
 			agePart: "6+", //适应年龄段
 			appintro: "从Fruitasia的惊人的世界联袂行动的新特点。！当你从一个新手水果彪形大汉增长到全力以赴的切片机和胜郎马里将引导您在游戏过程中切片水果，不要加入妊拉黑舒服的沙发哈撒浪嘿疯了似的",
@@ -59,11 +59,6 @@ PT.Manage.detail.prototype = {
 		}
 		self.setAppInfo(data);
 		self.setRootBtn(data.checkState, data.appID);
-	},
-	submit: function(id) {
-		//ajax
-		// 模拟
-		Showbo.Msg.alert('提交成功');
 	},
 	delete: function(id) {
 		//ajax
@@ -140,7 +135,6 @@ PT.Manage.detail.prototype = {
 		var self = this;
 		var edit = $("#edit");
 		var update = $("#update");
-		var submit = $("#submit");
 		var downline = $("#downline");
 		var deletebtn = $("#delete");
 		var checkStatebtn = $("#checkState");
@@ -151,14 +145,6 @@ PT.Manage.detail.prototype = {
 				downline.removeClass("downline normal").addClass("dis-downline disabled");
 				edit.removeClass("dis-edit disabled").addClass("edit normal");
 				edit.attr("href", "edit.html?id=" + id);
-				submit.removeClass("dis-submit disabled").addClass("submit normal");
-				submit.click(function() {
-					Showbo.Msg.confirm('提交前请确认已完整填写应用信息，提交后需要经过人工审核，请耐心等待。', function(flag) {
-						if(flag) {
-							self.submit(id);
-						}
-					});
-				});
 				deletebtn.removeClass("dis-delete disabled").addClass("delete normal");
 				deletebtn.click(function() {
 					Showbo.Msg.confirm('应用的统计数据和财务数据将一同被删除，确认删除该应用？', function(flag) {
@@ -173,12 +159,10 @@ PT.Manage.detail.prototype = {
 				update.removeClass("update normal").addClass("dis-update disabled");
 				downline.removeClass("downline normal").addClass("dis-downline disabled");
 				deletebtn.removeClass("delete normal").addClass("dis-delete disabled");
-				submit.removeClass("submit normal").addClass("dis-submit disabled");
 				edit.removeClass("edit normal").addClass("dis-edit disabled");
 				break;
 			case "审核未通过":
 				checkStatebtn.removeClass("normalbtn").addClass("uncheckedbtn");
-				submit.removeClass("submit normal").addClass("dis-submit disabled");
 				update.removeClass("update normal").addClass("dis-update disabled");
 				downline.removeClass("downline normal").addClass("dis-downline disabled");
 				edit.removeClass("dis-edit disabled").addClass("edit normal");
@@ -194,7 +178,6 @@ PT.Manage.detail.prototype = {
 				break;
 			case "已上架":
 				checkStatebtn.removeClass("normalbtn").addClass("successbtn");
-				submit.removeClass("normal").addClass("dis-submit disabled");
 				deletebtn.removeClass("delete normal").addClass("dis-delete disabled");
 				edit.removeClass("dis-edit disabled").addClass("edit normal");
 				edit.attr("href", "edit.html?id=" + id);
@@ -230,7 +213,6 @@ PT.Manage.detail.prototype = {
 				break;
 			case "已下架":
 				self.pcheckstate();
-				submit.removeClass("submit normal").addClass("dis-submit disabled");
 				update.removeClass("update normal").addClass("dis-update disabled");
 				downline.removeClass("downline normal").addClass("dis-downline disabled");
 				edit.removeClass("dis-edit disabled").addClass("edit normal");

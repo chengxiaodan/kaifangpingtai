@@ -1,0 +1,164 @@
+a {
+	color: #FFF5D7;
+}
+h1 {
+	margin: 0;
+	padding: 0;
+}
+.pay-banner {
+	width: 100%;
+	min-width: 1200px;
+	height: 440px;
+	background-image: url(../../img/service/banner.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.pay-banner-main {
+	width: 1200px;
+	height: 440px;
+	margin: 0 auto;
+}
+.pay-banner .title {
+	font-size: 64px;
+	color: #FFF6EF;
+	text-align: right;
+	text-align: -webkit-right;
+	text-align: -moz-right;
+	font-weight: 200;
+	letter-spacing: 4.79px;
+	text-shadow: 0 1px 2px #DC4A30;
+	padding-top: 112px;
+	padding-bottom: 34px;
+}
+.pay-banner .title h1 {
+	font-size: 64px;
+	display: inline-block;
+	font-weight: 400;
+	color: #fff5d7;
+}
+.pay-banner .pay-btn {
+	width: 100%;
+	height: 50px;
+	text-align: right;
+	text-align: -webkit-right;
+	text-align: -moz-right;
+}
+.pay-banner .pay-btn a {
+	width: 240px;
+	height: 50px;
+	display: inline-block;
+	text-align: center;
+	text-align: -webkit-center;
+	text-align: -moz-center;
+	border: 2px solid #FFF5D7;
+	border-radius: 100px;
+	line-height: 46px;
+	margin-right: 42px;
+}
+.pay-common {
+	width: 100%;
+	min-width: 1200px;
+	height: 540px;
+}
+.pay-mian {
+	width: 1200px;
+	height: 540px;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+}
+.pay-mian .title {
+	color: #fc806c;
+	font-size: 46px;
+	font-weight: 200;
+	padding-top: 180px;
+	letter-spacing: 3.44px;
+}
+.pay-mian .title h1 {
+	font-size: 46px;
+	font-weight: 400;
+	display: inline-block;
+}
+.pay-mian p {
+	color: #bdbdbd;
+	font-size: 24px;
+	font-weight: 200;
+	letter-spacing: 3.44px;
+}
+.pay-list {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.pay-mian ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	bottom: 90px;
+	left:16px;
+}
+.pay-mian ul li {
+	width: 240px;
+	height: 100px;
+	float: left;
+	margin-right: 70px;
+	color: #fc806c;
+	font-size: 24px;
+	font-weight: 200;
+	line-height: 100px;
+}
+.pay-mian ul li:last-child {
+	margin-right: 0px;
+}
+.pay-mian ul li:nth-child(3){
+	line-height: 32px;
+	padding-top: 18px;
+}
+.flow-chart {
+	width: 100%;
+	min-width: 1200px;
+	height: 400px;
+}
+.bg-color1 {
+	background-color: #ffffff;
+}
+.bg-color2 {
+	background-color: #fafafa;
+}
+.icon-1 {
+	padding-left: 100px;
+	background-image: url(../../img/service/icon_1.png);
+	background-position: bottom right 83px;
+}
+.icon-2 {
+	text-align: right;
+	text-align: -webkit-right;
+	text-align: -moz-right;
+	padding-right: 100px;
+	background-image: url(../../img/service/icon_2.png);
+	background-position: center left -31px;
+}
+.icon-2 p {
+	text-align: left;
+	text-align: -moz-left;
+	text-align: -webkit-left;
+	width: 460px;
+	float: right;
+}
+.icon-3 {
+	padding-left: 100px;
+	background-image: url(../../img/service/icon_3.png);
+	background-position: center right;
+}
+.icon-4 {
+	height: 400px;
+	text-align: center;
+	text-align: -webkit-center;
+	text-align: -moz-center;
+	background-image: url(../../img/service/steps.png);
+	background-position: center bottom 88px;
+}
+.icon-4 .title {
+	padding-top: 90px;
+}

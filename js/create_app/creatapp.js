@@ -13,7 +13,7 @@ PT.Creatapp.prototype = {
 			animation: true
 		}); //执行步骤初始化
 		self.render('step1'); //默认显示第一步上传应用
-
+		$("#fileQueue").hide();
 //		stepBar.init("stepBar", { //步骤
 //			step: 2,
 //			animation: true
@@ -29,6 +29,7 @@ PT.Creatapp.prototype = {
 		self.uploadfile();
 		$("#cancle").click(function() {
 			$('#upload_app').uploadify('cancel');
+			self.progresss = null;
 		});
 	},
 	uploadfile: function() {
@@ -37,16 +38,16 @@ PT.Creatapp.prototype = {
 				id: "fileQueue",
 				actionUrl: '', //请求路径
 				method: 'post', //请求方式
-				swf: '../../../ptdev_platform/js/plugin/uploadify/uploadify.swf',
-				checkExisting: '../../../ptdev_platform/js/plugin/uploadify/check-exists.php',
-				folder: '../../../ptdev_platform/js/plugin/uploadify/uploads', //您想将文件保存到的路径 
+				swf: '../../../open-dev/js/plugin/uploadify/uploadify.swf',
+				checkExisting: '../../../open-dev/js/plugin/uploadify/check-exists.php',
+				folder: '../../../open-dev/js/plugin/uploadify/uploads', //您想将文件保存到的路径 
 				uploadLimit: 1, //最多上传几个文件
 				simUploadLimit: 1, //允许同时上传的个数 默认值：1
 				fileDesc: 'apk文件',
 				fileExt: '*.apk;', //控制可上传文件的扩展名，启用本项时需同时声明fileDesc  
 				multi: false, //设置为true时可以上传多个文件
 				fileSizeLimit: '1024KB' //上传文件的大小限制
-			}
+		}
 			//官网API地址ttp://www.uploadify.com/documentation/
 		$("#upload_app").uploadify({
 			//			'uploader': '../../../ptdev_platform/js/plugin/uploadify/uploadify.php',
@@ -96,8 +97,8 @@ PT.Creatapp.prototype = {
 				self.uploadStart(file);
 			}, //上传开始时触发（每个文件触发一次)
 			'onUploadSuccess': function(file, data, response) {
-					self.uploadSuccess(file, data, response);
-				} //上传完成时触发（每个文件触发一次）
+				self.uploadSuccess(file, data, response);
+			} //上传完成时触发（每个文件触发一次）
 		});
 	},
 	//开始上传
@@ -127,20 +128,9 @@ PT.Creatapp.prototype = {
 		var percent = fileBytesLoaded / fileTotalBytes * 100;
 		percent = 50; //模拟上传百分比是50
 		fileBytesLoaded = "6.8MB";
+		$("#upload_step1").hide();
+		$("#fileQueue").show();
 		self.progresss.fileUploading(percent, fileBytesLoaded);
-
-		//				alert('id: ' + file.id +
-		//					' - 索引: ' + file.index +
-		//					' - 文件名: ' + file.name +
-		//					' - 文件大小: ' + file.size +
-		//					' - 类型: ' + file.type +
-		//					' - 创建日期: ' + file.creationdate +
-		//					' - 修改日期: ' + file.modificationdate +
-		//					' - 文件状态: ' + file.filestatus +
-		//					' - 当前文件已上传: ' + fileBytesLoaded +
-		//					' - 当前文件大小: ' + fileTotalBytes +
-		//					' - 队列已上传: ' + queueBytesLoaded +
-		//					' - 队列大小: ' + swfuploadifyQueueUploadSize);
 	},
 	//上传成功
 	uploadSuccess: function(file, data, response) {
@@ -151,7 +141,7 @@ PT.Creatapp.prototype = {
 				step: 2,
 				animation: true
 			});
-			self.render('step3');
+			self.render('step2');
 			var appinfo = {
 				packgename: file.name,
 				version: file.version,
@@ -163,19 +153,9 @@ PT.Creatapp.prototype = {
 			}
 			var addInfo = new PT.Creatapp.addInfo({
 				appinfo: appinfo,
-				domSelector: $("#step3")
+				domSelector: $("#step2")
 			});
 		}
-		//				alert('id: ' + file.id +
-		//					' - 索引: ' + file.index +
-		//					' - 文件名: ' + file.name +
-		//					' - 文件大小: ' + file.size +
-		//					' - 类型: ' + file.type +
-		//					' - 创建日期: ' + file.creationdate +
-		//					' - 修改日期: ' + file.modificationdate +
-		//					' - 文件状态: ' + file.filestatus +
-		//					' - 服务器端消息: ' + data +
-		//					' - 是否上传成功: ' + response);
 	},
 	//上传出错
 	uploadError: function(file, errorCode, errorMsg, errorString, swfuploadifyQueue) {

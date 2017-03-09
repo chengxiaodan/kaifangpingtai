@@ -108,14 +108,14 @@ body {
 }
 
 .dev-container .dev-item1 figure {
-	width: 390px;
+	width: 486px;
 	height: 100%;
 	line-height: 100%;
 }
 
 .dev-container .dev-item1 figure .icon {
-	width: 140px;
-	height: 140px;
+	width: 125px;
+	height: 125px;
 	display: inline-block;
 	line-height: 188px;
 	float: left;
@@ -124,12 +124,30 @@ body {
 .dev-container .dev-item1 figure .right-part {
 	width: auto;
 	height: 140px;
-	line-height: 140px;
+	/*line-height: 140px;*/
 	float: left;
 	text-align: left;
 	text-align: -moz-left;
 	text-align: -webkit-left;
 	position: relative;
+}
+.dev-container .dev-item1 figure .right-part .tip {
+	width: 120px;
+	font-size: 14px;
+	color: #666;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	top: 32px;
+	letter-spacing: 1.19px;
+}
+.dev-container .dev-item1 figure .app_title {
+	width: auto;
+	height: 140px;
+	line-height: 140px;
+	float: left;
+	background: url(../../img/manage/icon_yixiajia.png) no-repeat left 62px;
 }
 
 .dev-container .dev-item1 figure figcaption {
@@ -137,16 +155,17 @@ body {
 	color: #4a4a4a;
 	letter-spacing: 1.19px;
 	text-align: left;
-	width: 250px;
+	width: 200px;
 	height: 16px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: block;
 	line-height: 16px;
-	margin-top: 40px;
+	margin-top: 36px;
 	margin-bottom: 14px;
 }
+
 
 .dev-container .dev-item1 figure .check-state {
 	border-radius: 4px;
@@ -156,7 +175,8 @@ body {
 	color: #ffffff;
 	text-align: center;
 	line-height: 30px;
-	margin-bottom: 40px;
+	position: absolute;
+	top: 65px;
 }
 .successbtn {
 	background: #3CC060;
@@ -260,7 +280,7 @@ body {
 }
 
 .dev-container .dev-item1 .appinfo .value {
-	width: 300px;
+	width: 280px;
 }
 
 .dev-container .dev-item3-1 .appinfo .value {
@@ -283,7 +303,7 @@ body {
 
 .dev-container .dev-wrapper .dev-item2>div {
 	height: 100%;
-	margin: 0px 30px;
+	margin: 0px 105px;
 }
 
 .dev-container .dev-wrapper .dev-item2 .mbtn {
